@@ -2,9 +2,10 @@
   <nav class="navbar">
     <div class="logo">
       <router-link to="/">
-        <img src="@/assets/vue.svg" alt="Ghorer Bazar Logo" />
+        <img src="@/assets/images/Bazaar-logo.png" alt="Bazaar Logo" />
       </router-link>
     </div>
+
     <ul class="nav-links">
       <li v-for="link in navLinks" :key="link.name">
         <router-link :to="link.path">{{ link.name }}</router-link>
@@ -28,12 +29,12 @@ const navLinks = ref([
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #fff; /* Default for light mode */
+  background-color: #fff;
   border-bottom: 1px solid #ddd;
 }
 
 .logo img {
-  height: 40px;
+  height: 100px;
 }
 
 .nav-links {
@@ -44,7 +45,7 @@ const navLinks = ref([
 
 .nav-links li a {
   text-decoration: none;
-  color: #333; /* Default for light mode */
+  color: #333;
   font-weight: 500;
 }
 
@@ -55,7 +56,7 @@ const navLinks = ref([
 /* Dark mode adjustments */
 @media (prefers-color-scheme: dark) {
   .navbar {
-    background-color: #333; /* Dark background for dark mode */
+    background-color: #636262; /* Dark background for dark mode */
     border-bottom: 1px solid #555;
   }
 
