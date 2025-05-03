@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="h-screen flex flex-col">
     <Navbar />
-    <div class="flex-1 overflow-hidden">
+    <div class="flex-1">
       <router-view />
     </div>
   </div>

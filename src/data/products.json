@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "image": "meal-3175540_1280.jpg",
+    "name": "Meal",
+    "price": 300
+  },
+  {
+    "id": 2,
+    "image": "raspberries-2023404_1280.jpg",
+    "name": "Raspberries",
+    "price": 400
+  },
+  {
+    "id": 3,
+    "image": "vegetables-3483066_1280.jpg",
+    "name": "Vegetables",
+    "price": 100
+  }
+]

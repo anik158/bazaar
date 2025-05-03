@@ -4,6 +4,9 @@ import { ref, onMounted } from "vue";
 import image1 from "@/assets/images/meal-3175540_1280.jpg";
 import image2 from "@/assets/images/raspberries-2023404_1280.jpg";
 import image3 from "@/assets/images/vegetables-3483066_1280.jpg";
+import Card from "@/components/Card.vue";
+import products from "@/data/products.json"
+
 
 const images = ref([image1, image2, image3]);
 const currentImageIndex = ref(0);
@@ -11,10 +14,14 @@ const currentImageIndex = ref(0);
 const headlines = ref(["Contains Quality", "At Best Price", "Taste the Desire"]);
 const headlineIndex = ref(0);
 
+const lengths = [1,2,3,4]
+
+
+console.log(products)
 onMounted(() => {
   setInterval(() => {
     currentImageIndex.value = (currentImageIndex.value + 1) % images.value.length;
-  }, 3000);
+  }, 4000);
 
   setInterval(() => {
     headlineIndex.value = (headlineIndex.value + 1) % headlines.value.length;
@@ -40,6 +47,14 @@ onMounted(() => {
         />
         <p class="headline">{{headlines[headlineIndex]}}</p>
       </transition-group>
+    </div>
+
+    <div class="products max-w-7xl mx-auto py-3">
+        <p class="text-center text-4xl font-bold py-3">All Products</p>
+
+      <div class="product-list flex justify-between items-center flex-wrap">
+        <Card v-for="product in products" :key="product.id" :product="product" />
+      </div>
     </div>
   </div>
 </template>
