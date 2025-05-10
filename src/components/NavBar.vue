@@ -1,40 +1,49 @@
 <template>
   <nav class="navbar">
-    <div class="logo">
+
+    <div class="logo flex w-[80rem] items-center justify-between">
+      <div class="search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
       <router-link to="/">
-        <img src="@/assets/images/Bazaar-logo.png" alt="Bazaar Logo" />
+        <img src="@/assets/images/Bazaar-logo-cropped.png" alt="Bazaar Logo" />
       </router-link>
+      <div class="profile">
+        <i class="fa-solid fa-user"></i>
+      </div>
     </div>
 
-    <ul class="nav-links">
-      <li v-for="link in navLinks" :key="link.name">
-        <router-link :to="link.path">{{ link.name }}</router-link>
-      </li>
-    </ul>
+    <div class="max-h-full">
+      <ul class="nav-links">
+        <li v-for="link in navLinks" :key="link.name">
+          <router-link :to="link.path">{{ link.name }}</router-link>
+        </li>
+      </ul>
+    </div>
   </nav>
 </template>
 
 <script setup>
 import { ref } from 'vue';
-
 const navLinks = ref([
   { name: 'Offer Zone', path: '/offer-zone' },
-  { name: 'Best Seller', path: '/best-seller' }
+  { name: 'Best Seller', path: '/best-seller' },
 ]);
 </script>
 
 <style scoped>
 .navbar {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 0.4rem 0.6rem;
   background-color: #fff;
   border-bottom: 1px solid #ddd;
 }
 
 .logo img {
-  height: 100px;
+  height: 40px;
 }
 
 .nav-links {
@@ -50,22 +59,39 @@ const navLinks = ref([
 }
 
 .nav-links li a:hover {
-  color: #f5a623;
+  color: #239ef5;
 }
 
-/* Dark mode adjustments */
+.profile i.fa-solid.fa-user, i.fa-solid.fa-magnifying-glass {
+  font-size: 24px;
+  color: #239ef5;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.profile i.fa-solid.fa-user:hover, i.fa-solid.fa-magnifying-glass:hover {
+  color: #239ef5;
+  transform: scale(1.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
 @media (prefers-color-scheme: dark) {
   .navbar {
-    background-color: #636262; /* Dark background for dark mode */
-    border-bottom: 1px solid #555;
+    background-color: #366674;
+    border-bottom: 1px solid #366674;
   }
-
   .nav-links li a {
-    color: #fff; /* White text for dark mode */
+    color: #fff;
   }
-
   .nav-links li a:hover {
-    color: #f5a623; /* Keep the hover color consistent */
+    color: #239ef5;
+  }
+  .profile i.fa-solid.fa-user i.fa-solid.fa-magnifying-glass {
+    color: #239ef5;
+  }
+  .profile i.fa-solid.fa-user:hover, i.fa-solid.fa-magnifying-glass:hover {
+    color: #fff;
   }
 }
 </style>

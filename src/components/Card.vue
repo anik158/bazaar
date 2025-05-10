@@ -18,7 +18,7 @@ const getImagePath = (imageFile) => {
       <h2 class="font-medium text-lg text-black">{{ product.price }} BDT</h2>
     </div>
     <div class="overlay">
-      <button class="cart-btn font-medium text-lg p-2 text-white rounded-lg hidden bg-blue-950"> Add To Cart</button>
+      <button class="cart-btn font-medium text-lg p-2 text-white rounded-lg hidden bg-blue-950"> Proceed to Buy</button>
       <img src="@/assets/images/Ribbon-PNG-Pic.png" alt="hover image" class="hover-img hidden" />
     </div>
   </div>

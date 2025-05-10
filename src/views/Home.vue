@@ -17,7 +17,6 @@ const headlineIndex = ref(0);
 const lengths = [1,2,3,4]
 
 
-console.log(products)
 onMounted(() => {
   setInterval(() => {
     currentImageIndex.value = (currentImageIndex.value + 1) % images.value.length;
